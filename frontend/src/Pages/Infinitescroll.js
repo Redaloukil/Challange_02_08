@@ -11,11 +11,7 @@ class Infinitescroll extends React.Component {
     }
     
     componentWillMount(){
-        fetch('../../data.json').then((data)=> {
-            console.log(data);
-        }).catch((errors)=>{
-            this.state(errors);
-        })
+        
     }
     
     render(){
