@@ -6,21 +6,25 @@ class Infinitescroll extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            next : "",
             posts : [],
-            errors : ""
+            errors : "",
         }
+        this.handleScroll = this.handleScroll.bind(this)
     }
     
     handleScroll = e => {
+        console.log("hello world")
         let element = e.target
         if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-          // do something at end of scroll
+            console.log("scroll hello")
         }
     }
 
     componentWillMount(){
         posts.getByPage(1).then(res => {
-            this.setState({posts});
+            console.log(res.results);
+            this.setState({posts : res.results , next : res.next});
         }).catch(errors =>{
             this.setState({errors});
         })
@@ -28,8 +32,8 @@ class Infinitescroll extends React.Component {
     
     render(){
         return (
-            <div onScroll={this.handleScroll} id="Infinite-content">
-                Infinitescroll Component
+            <div id="Infinite-content" onScroll={this.handleScroll}>
+                    <h1>Infinitescroll Component</h1>
                     <div className="pagination-content">
                         {this.state.posts.map((element , key ) =>{
                             return <Post content={element} key={key}/>

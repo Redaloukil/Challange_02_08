@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  
 }
 
 .App-header {
@@ -17,26 +16,17 @@
 
 
 .title {
-  font-size:25px;
+  font-size:35px;
+  color: #3498db;
 }
 
-
-.active {
-  font-size:180%;
-}
+.page-item {
+  display: flex;
+  padding: 1%;
   
-.page-item  {
-  display: inline-block;
-  margin:4%;
 }
-
-.page-link {
-  font-size:80%;
+.page-item a {
+  background-color: #f4f4f4;
+  padding:20px 20px;
   text-decoration: none;
-  color:white;
-  
-}
-
-.post {
-  padding:1% 0%;
 }
