@@ -11,8 +11,8 @@ const PaginationList = props => {
       range.push(i);
     }
   
-    const setPage = page => {
-      
+    const changePage = page => {
+      props.setPage(page);
     };
   
     return (
@@ -22,7 +22,7 @@ const PaginationList = props => {
               const isCurrent = v === props.currentPage;
               const onClick = ev => {
                 ev.preventDefault();
-                setPage(v);
+                changePage(v);
               };
               return (
                 <li

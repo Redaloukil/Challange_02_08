@@ -10,22 +10,23 @@ class Pagination extends React.Component {
         this.state = {
             numberPerPage : 10,
             count : 0,
-            currentPage:1,
+            currentPage:0,
             posts : [],
             errors : "",
         }
+        this.setPage = (page) =>{
+            
+            posts.getByPage(page + 1)
+                .then(res => {
+                    this.setState({posts : res.results , currentPage : page});
+                })
+                .catch(err => {
+                    this.setState({errors : err});
+                })
+        }
     }
     
-    setPage(page){
-        this.setState({currentPage : page})
-        posts.getByPage(page)
-            .then(res => {
-                this.setState({posts : res.results});
-            })
-            .catch(err => {
-                this.setState({errors : err});
-            })
-    }
+    
 
     componentWillMount(){
         posts.getAll()
@@ -45,11 +46,11 @@ class Pagination extends React.Component {
             )
         }
         return (
-            <div>
+            <div className="pagination-content">
                 {this.state.posts.map((element , key ) =>{
                     return <Post content={element} key={key}/>
                 })}
-                <PaginationList count={this.state.count} currentPage={this.state.currentPage} />
+                <PaginationList count={this.state.count} currentPage={this.state.currentPage} setPage={this.setPage}/>
             </div>
         )
     }

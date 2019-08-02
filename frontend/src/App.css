@@ -1,12 +1,13 @@
 .App {
   text-align: center;
+  
 }
 
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -16,16 +17,26 @@
 
 
 .title {
-  font-size:35px;
+  font-size:25px;
 }
 
 
-  
+.active {
+  font-size:180%;
+}
   
 .page-item  {
   display: inline-block;
-  margin: 10px;
-  color: white;  
-  font-size: calc(10px + 2vmin);  
+  margin:4%;
+}
+
+.page-link {
+  font-size:80%;
   text-decoration: none;
+  color:white;
+  
+}
+
+.post {
+  padding:1% 0%;
 }

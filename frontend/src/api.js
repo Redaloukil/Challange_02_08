@@ -8,7 +8,7 @@ const responseBody = ( res ) => {
 
 
 export const posts = {
-    getByPage : (page) => axios.get(`https://swapi.co/api/people/?page=${page}?format=json`).then(responseBody),
+    getByPage : (page) => axios.get(`https://swapi.co/api/people/?format=json&page=${page}`).then(responseBody),
     getAll: () => axios.get("https://swapi.co/api/people/?format=json").then(responseBody),
 }
 
