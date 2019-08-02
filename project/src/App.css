@@ -1,0 +1,74 @@
+.App {
+  text-align: center;
+}
+.pagination-content {
+  text-align: left;
+}
+th  {
+  padding: 2%;
+}
+
+td {
+  padding: 1%;
+}
+
+.post h4 {
+  font-size: 14px;
+}
+.select a {
+  color: white;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(6px + 2vmin);
+  color: white;
+}
+
+.title {
+  font-size:20px;
+  color: #3498db;
+}
+
+.page-item {
+  display: inline-block;
+  padding: 1%;
+  
+}
+
+
+.page-item a {
+  padding:0px 20px;
+  text-decoration: none;
+  color: #3498db;
+}
+
+.active .page-link{
+  color: white !important;
+
+}
+
+@media (min-width: 576px) {  
+  .App-header {
+    font-size: calc(4px + 2vmin);
+  }
+}
+
+
+@media (min-width: 768px) {  
+  
+}
+
+@media (min-width: 992px) {  
+  
+}
+
+
+@media (min-width: 1200px) {  
+  
+}
